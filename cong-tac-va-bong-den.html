@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let SwitchButton = function() {
+            this.connectToLamp = function () {
+                if(this.status) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            this.switchOn = function () {
+                this.status = true;
+                alert("Switch On");
+            }
+            this.switchOff = function () {
+                this.status = false ;
+                alert("Switch Off");
+            }
+        };
+        let FlashLamp = function () {
+              this.turn = function (turn) {
+                  if (turn == true) {
+                      alert("Flashlamp Lighting")
+                  } else  {
+                      alert ("Flashlamp Not Lighting")
+                  }
+              }
+        }
+        let button = new SwitchButton();
+        let lamp = new FlashLamp();
+        for (var i = 0 ; i < 10 ; i++) {
+            button.switchOn();
+        lamp.turn(button.connectToLamp());
+        button.switchOff();
+        lamp.turn(button.connectToLamp());
+        }
+        
+        
+        </script>
+</body>
+</html>
